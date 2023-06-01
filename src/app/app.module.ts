@@ -11,17 +11,24 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthorComponent } from './author/author.component';
 import { PublicationComponent } from './publication/publication.component';
+import { AuthorDetailsComponent } from './author-details/author-details.component';
+import { PublicationDetailsComponent } from './publication-details/publication-details.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthorComponent,
-    PublicationComponent
+    PublicationComponent,
+    AuthorDetailsComponent,
+    PublicationDetailsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,8 @@ import { PublicationComponent } from './publication/publication.component';
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

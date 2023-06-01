@@ -18,7 +18,11 @@ export class AuthorService {
     return of([{firstName: 'Tilen', lastName: 'Tilen', id: '2'}]);
   }
 
-  public create(author: Author) {
+  public createAuthor(author: Author) {
+    return author;
+  }
+
+  public updateAuthor(author: Author) {
     return author;
   }
 }

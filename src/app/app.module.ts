@@ -1,6 +1,3 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -20,6 +17,12 @@ import { PublicationComponent } from './publication/publication.component';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { PublicationDetailsComponent } from './publication-details/publication-details.component';
 import { SearchComponent } from './search/search.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { AuthorEditComponent } from './author-edit/author-edit.component';
+import { PublicationEditComponent } from './publication-edit/publication-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { SearchComponent } from './search/search.component';
     PublicationComponent,
     AuthorDetailsComponent,
     PublicationDetailsComponent,
-    SearchComponent
+    SearchComponent,
+    AuthorEditComponent,
+    PublicationEditComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,8 @@ import { SearchComponent } from './search/search.component';
     MatSelectModule,
     MatFormFieldModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

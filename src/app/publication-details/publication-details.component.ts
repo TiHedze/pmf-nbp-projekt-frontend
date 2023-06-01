@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Publication } from '../models/author.model';
 
 @Component({
   selector: 'app-publication-details',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./publication-details.component.css']
 })
 export class PublicationDetailsComponent {
-
+  public publication?: Publication;
+  public displayedColumns: string[] = ['position','firstName', 'lastName'];
 }

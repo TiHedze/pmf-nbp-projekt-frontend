@@ -12,17 +12,19 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthorComponent } from './author/author.component';
-import { PublicationComponent } from './publication/publication.component';
-import { AuthorDetailsComponent } from './author-details/author-details.component';
-import { PublicationDetailsComponent } from './publication-details/publication-details.component';
+import { AuthorComponent } from './author/author/author.component';
 import { SearchComponent } from './search/search.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { AuthorEditComponent } from './author-edit/author-edit.component';
-import { PublicationEditComponent } from './publication-edit/publication-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthorCreateComponent } from './author/author-create/author-create.component';
+import { AuthorDetailsComponent } from './author/author-details/author-details.component';
+import { AuthorEditComponent } from './author/author-edit/author-edit.component';
+import { PublicationCreateComponent } from './publication/publication-create/publication-create.component';
+import { PublicationDetailsComponent } from './publication/publication-details/publication-details.component';
+import { PublicationEditComponent } from './publication/publication-edit/publication-edit.component';
+import { PublicationComponent } from './publication/publication/publication.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { PublicationEditComponent } from './publication-edit/publication-edit.co
     PublicationDetailsComponent,
     SearchComponent,
     AuthorEditComponent,
-    PublicationEditComponent
+    PublicationEditComponent,
+    AuthorCreateComponent,
+    PublicationCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,8 @@ import { PublicationEditComponent } from './publication-edit/publication-edit.co
     MatFormFieldModule,
     MatTableModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

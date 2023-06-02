@@ -1,13 +1,12 @@
 <mat-card>
     <mat-card-content>
-        <form>
-            <input matInput placeholder="Search" />
-            <mat-select>
-                <mat-option value="option1">Option 1</mat-option>
-                <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-                <mat-option value="option3">Option 3</mat-option>
+        <form [formGroup]="searchControl" (ngSubmit)="onSubmit()">
+            <input matInput placeholder="Search" formControlName="query"/>
+            <mat-select [(value)]="selected" placeholder="Author" formControlName="category">
+                <mat-option value="author">Author</mat-option>
+                <mat-option value="publication">Publications</mat-option>
             </mat-select>
-            <button mat-button>Search</button>
+            <button mat-button type="submit">Search</button>
         </form>
     </mat-card-content>
 </mat-card>

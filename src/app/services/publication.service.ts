@@ -1,15 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Publication } from '../models/author.model';
-import { Observable, of } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PublicationService {
 
-  constructor() { }
+  constructor(private readonly httpClient: HttpClient) { }
 
   public getPublicationsByAuthorId(authorId: string): Observable<Publication[]> {
-    return of([{abstract: '', id: '', title:'test title', keywords: 'test1, test2, test3', authors: []}])
+
+    const url = `${environment}/publication/${authorId}`;
+
+    return this.httpClient.get<Publication[]>(url).pipe(
+      map(item => item),
+    )
   }
 }

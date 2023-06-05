@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Publication } from '../models/author.model';
+import { Publication } from 'src/app/models/author.model';
 
 @Component({
   selector: 'app-publication-details',

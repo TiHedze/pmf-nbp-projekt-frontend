@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Author } from '../models/author.model';
 import { Injectable } from '@angular/core';
 import { CreateAuthorRequest } from './requests/create-author-request';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'

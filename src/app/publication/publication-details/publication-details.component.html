@@ -1,8 +1,10 @@
 <mat-card>
     <mat-card-header>
-        {{publication?.title}}
+        <h4>{{publication.title}}</h4>
     </mat-card-header>
     <mat-card-content>
+      <button mat-raised-button color="warn" (click)="deletePublication()">Delete</button>
+      <br />
        <table>
         <table mat-table [dataSource]="publication!.authors" class="mat-elevation-z8">
             <ng-container matColumnDef="position">

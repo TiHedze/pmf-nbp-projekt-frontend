@@ -28,9 +28,9 @@ export class AuthorEditComponent implements OnInit {
       .pipe(
         take(1)
       )
-      .subscribe(author => {
-        this.editAuthorFormControl.value.firstName = author.firstName;
-        this.editAuthorFormControl.value.lastName = author.lastName;
+      .subscribe(details => {
+        this.editAuthorFormControl.value.firstName = details.author.firstName;
+        this.editAuthorFormControl.value.lastName = details.author.lastName;
         this.editAuthorFormControl.updateValueAndValidity();
       });
   }

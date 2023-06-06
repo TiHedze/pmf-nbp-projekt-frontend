@@ -1,1 +1,62 @@
-<p>publication-edit works!</p>
+<mat-card>
+    <mat-card-header>
+        Update Publication
+    </mat-card-header>
+    <mat-card-content class="container">
+        <form [formGroup]="editPublicationFormControl" (ngSubmit)="onSubmit()" class="column">
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input type="text" matInput formControlName="title">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Abstract</mat-label>
+                <input type="text" matInput formControlName="abstract">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Keywords</mat-label>
+                <input type="text" matInput formControlName="keywords">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Author's first name</mat-label>
+                <input type="text" matInput formControlName="authorFirstName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Author's last name</mat-label>
+                <input type="text" matInput formControlName="authorLastName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Co-author's first name</mat-label>
+                <input type="text" matInput formControlName="coauthor1FirstName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Co-author's last name</mat-label>
+                <input type="text" matInput formControlName="coauthor1LastName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Co-author's first name</mat-label>
+                <input type="text" matInput formControlName="coauthor2FirstName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Co-author's last name</mat-label>
+                <input type="text" matInput formControlName="coauthor2LastName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Co-author's first name</mat-label>
+                <input type="text" matInput formControlName="coauthor3FirstName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Co-author's last name</mat-label>
+                <input type="text" matInput formControlName="coauthor3LastName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Co-author's first name</mat-label>
+                <input type="text" matInput formControlName="coauthor4FirstName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Co-author's last name</mat-label>
+                <input type="text" matInput formControlName="coauthor4LastName">
+            </mat-form-field>
+            <button mat-button type="submit" color="primary">Update</button>
+        </form>
+    </mat-card-content>
+</mat-card>

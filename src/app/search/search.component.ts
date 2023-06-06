@@ -1,17 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthorService } from '../services/author.service';
-import { PublicationService } from '../services/publication.service';
-import { Observable } from 'rxjs';
-import { Author, Publication } from '../models/author.model';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
   public searchControl: FormGroup<SearchForm> = this.formBuilder.group({
     query: new FormControl<string>('',{nonNullable: true,validators:[Validators.required]}),
@@ -19,6 +15,8 @@ export class SearchComponent implements OnInit {
   });
 
   public selected: string = Dropdown.Author;
+  public author: Dropdown = Dropdown.Author;
+  public publication: Dropdown = Dropdown.Publication;
 
   constructor(
     private router: Router,
@@ -28,14 +26,11 @@ export class SearchComponent implements OnInit {
   public onSubmit() {
     if(this.searchControl.valid)
     {
-      this.router.navigate([this.searchControl.value.category, this.searchControl.value.query]);
+      console.log(this.searchControl.value.query);
+      this.router.navigate([this.searchControl.value.category],{queryParams: {query: this.searchControl.value.query}});
     }
   }
   
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
 }
 
 interface SearchForm {
@@ -44,6 +39,6 @@ interface SearchForm {
 }
 
 enum Dropdown {
-  Author = 'author',
-  Publication = 'publication'
+  Author = 'authors',
+  Publication = 'publications'
 }

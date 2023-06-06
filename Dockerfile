@@ -9,4 +9,5 @@ COPY . .
 RUN npm run build --prod
 
 FROM nginx as runtime
-COPY --from=build /app/dist/pmf-nbp-projekt /usr/share/nginx/html
+COPY nginx/default.conf /etc/nginx/conf.d
+COPY --from=build /app/dist/pmf-nbp-projekt/ /usr/share/nginx/html

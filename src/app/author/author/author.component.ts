@@ -12,7 +12,6 @@ import { Subject, takeUntil, takeWhile } from 'rxjs';
 export class AuthorComponent implements OnInit, OnDestroy {
 
   public authors: Author[] = [];
-  public dataSource: Author[] = [{ firstName: 'Tilen', lastName: 'Hedžet', id: '1' }];
   public displayedColumns: string[] = ['position', 'firstName', 'lastName', 'details'];
   private unsubscriber: Subject<boolean> = new Subject();
 

@@ -1,9 +1,10 @@
 <mat-card>
     <mat-card-header>
-        {{author?.firstName}} {{author?.lastName}}
+        <h4>{{author.firstName}} {{author.lastName}}</h4>
     </mat-card-header>
     <mat-card-content>
-       <table>
+      <button mat-raised-button color="warn" (click)="deleteAuthor()">Delete</button>
+      <br />
         <table mat-table [dataSource]="publications" class="mat-elevation-z8">
             <ng-container matColumnDef="title">
               <th mat-header-cell *matHeaderCellDef> Title </th>
@@ -12,12 +13,31 @@
           
             <ng-container matColumnDef="details">
               <th mat-header-cell *matHeaderCellDef> View Details </th>
-              <td mat-cell *matCellDef="let element"><a mat-button [routerLink]="['publications', element.id]">Details</a> </td>
+              <td mat-cell *matCellDef="let element"><a mat-button [routerLink]="['/publications/details', element.id]">Details</a> </td>
             </ng-container>
           
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr mat-header-row *matHeaderRowDef="displayedPublicationColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedPublicationColumns;"></tr>
           </table>
-       </table>
+
+          <table mat-table [dataSource]="relatedAuthors" class="mat-elevation-z8">
+            <ng-container matColumnDef="firstName">
+              <th mat-header-cell *matHeaderCellDef> First Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="lastName">
+              <th mat-header-cell *matHeaderCellDef> Last Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="details">
+              <th mat-header-cell *matHeaderCellDef> View Details </th>
+              <td mat-cell *matCellDef="let element"><a mat-button [routerLink]="['/author/details', element.id]">Details</a> </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedAuthorColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedAuthorColumns;"></tr>
+          </table>
     </mat-card-content>
 </mat-card>
